@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main- "the program loads the main function, thats the starting point."
+ * main - "Program starts here"
  *
  * return: Always 0
  */
