@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * main "the program loads the main function, thats the starting point."
+ * main- "the program loads the main function, thats the starting point."
  *
- * return "ends the execution by returning a value"
+ * return- "ends the execution by returning a value"
  */
 
 int main(void)
