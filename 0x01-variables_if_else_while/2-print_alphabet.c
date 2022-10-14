@@ -2,6 +2,8 @@
 
 /**
 * main - Program starts here
+*
+* Return: Always 0
 */
 int main(void)
 {
