@@ -8,7 +8,7 @@
 * Return: 0
 */
 
-int main(void)
+void print_alphabet(void)
 {
 	int i;
 
@@ -16,6 +16,7 @@ int main(void)
 	while (i <= 122)
 	{
 		_putchar(i);
+		i++;
 	}
 	_putchar('\n');
 
