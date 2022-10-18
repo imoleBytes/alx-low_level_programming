@@ -3,9 +3,8 @@
 
 
 /**
-* main - Starts
+* print_alphabet - Starts
 *
-* Return: 0
 */
 
 void print_alphabet(void)
