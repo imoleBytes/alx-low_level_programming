@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
-* puts_half - prints half of a string.
-* @str: param
+* puts_half - this print half of a string.
+* @str: parameter
 */
 void puts_half(char *str)
 {
-	int count = 0, i;
+	int count = 0, id;
 
 	while (count >= 0)
 	{
@@ -16,11 +16,11 @@ void puts_half(char *str)
 	}
 
 	if (count % 2 == 1)
-		i = count / 2;
+		id = count / 2;
 	else
-		i = (count - 1) / 2;
+		id = (count - 1) / 2;
 
-	for (i++; i < count; i++)
-		_putchar(str[i]);
+	for (id++; id < count; id++)
+		_putchar(str[id]);
 	_putchar('\n');
 }
