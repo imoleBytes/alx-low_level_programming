@@ -1,3 +1,4 @@
+#include <main.h>
 
 /**
 * print_rev - func for reverse
@@ -8,7 +9,7 @@ void print_rev(char *s)
 {
 	int count = 0;
 
-	while (s[count] != '\n')
+	while (s[count] != '\0')
 	{
 		count++;
 	}
