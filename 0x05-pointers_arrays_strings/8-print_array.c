@@ -2,18 +2,18 @@
 #include <stdio.h>
 
 /**
-* print_array - prints array
+* print_array - prints the array individually
 * @a: params
 * @n: params
 */
 void print_array(int *a, int n)
 {
-	int i = 0;
+	int id = 0;
 
-	for (; i < n; i++)
+	for (; id < n; id++)
 	{
-		printf("%d", *(a + i));
-		if (i != (n - 1))
+		printf("%d", *(a + id));
+		if (id != (n - 1))
 			printf(", ");
 	}
 	printf("\n");
