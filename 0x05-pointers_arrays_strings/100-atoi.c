@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
-* _atoi - converts a string to an integer.
-* @s: params
-* Return: something
+* _atoi - this converts string to an integr.
+* @s: parameter
+* Return: an integer
 */
 
 int _atoi(char *s)
 {
-	unsigned int count = 0, size = 0, j = 0, k = 1, m = 1, i;
+	unsigned int count = 0, size = 0, j = 0, k = 1, m = 1, id;
 
 	while (*(s + count) != '\0')
 	{
@@ -30,9 +30,9 @@ int _atoi(char *s)
 		count++;
 	}
 
-	for (i = count - size; i < count; i++)
+	for (id = count - size; id < count; id++)
 	{
-		j = j + ((*(s + i) - 48) * m);
+		j = j + ((*(s + id) - 48) * m);
 		m /= 10;
 	}
 	return (j * k);
