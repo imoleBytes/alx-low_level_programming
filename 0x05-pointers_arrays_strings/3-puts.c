@@ -17,6 +17,6 @@ void _puts(char *str)
 		count++;
 	}
 
-	write(2, str, count);
-	write(2, p, 1);
+	write(1, str, count);
+	write(1, p, 1);
 }
