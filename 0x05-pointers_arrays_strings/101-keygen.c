@@ -2,23 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 /**
-* main - generates keygen.
-* Return: 0
-*/
-
+ * main - to generate a keygen.
+ * Return: 0
+ */
 int main(void)
 {
-	int i = 0, j = 0;
+	int m = 0, j = 0;
 	time_t t;
 
 	srand((unsigned int) time(&t));
 	while (j < 2772)
 	{
-		i = rand() % 128;
-		if ((j + i) > 2772)
+		m = rand() % 128;
+		if ((j + m) > 2772)
 			break;
-		j += i;
-		printf("%c", i);
+		j += m;
+		printf("%c", m);
 	}
 	printf("%c\n", (2772 - j));
 	return (0);
