@@ -32,11 +32,34 @@
  *
  * Return: Always 0.
  */
+// int main(void)
+// {
+//     int n;
+
+//     n = _strlen_recursion("Corbin Coleman");
+//     printf("%d\n", n);
+//     return (0);
+// }
+
+
+
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-    int n;
+    int r;
 
-    n = _strlen_recursion("Corbin Coleman");
-    printf("%d\n", n);
+    r = factorial(1);
+    printf("%d\n", r);
+    r = factorial(5);
+    printf("%d\n", r);
+    r = factorial(10);
+    printf("%d\n", r);
+    r = factorial(-1024);
+    printf("%d\n", r);
     return (0);
 }
