@@ -1,10 +1,8 @@
-
-
 /**
- * wildcmp - Compare stringsss
- * @s1: pointer to string
+ * wildcmp - Compare two strings
+ * @s1: pointer to string 1
  * @s2: pointer to string 2
- * Return: 0
+ * Return: int
  */
 
 int wildcmp(char *s1, char *s2)
