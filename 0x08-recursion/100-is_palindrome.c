@@ -1,14 +1,14 @@
 /**
-* _strlen_recursion - fuc returns the lenght of a string recursively
+* _strlen_ - func returns the lenght of a string recursively
 * @s: string
 * Return: int
 */
 
-int _strlen_recursion(char *s)
+int _strlen_(char *s)
 {
 	if (*s == '\0')
 		return (0);
-	return (1 + _strlen_recursion(s + 1));
+	return (1 + _strlen_(s + 1));
 }
 
 
@@ -17,7 +17,7 @@ int _strlen_recursion(char *s)
  * palin - palindrome
  * @s: pointer to string
  * @l: position
- * Return: boolena
+ * Return: int
  */
 
 int palin(char *s, int l)
@@ -35,14 +35,14 @@ int palin(char *s, int l)
 }
 
 /**
- * is_palindrome - palindrome
- * @s: pointer to string
- * Return: recursion
+ * is_palindrome - func to check palindrome
+ * @s: string
+ * Return: int
  */
 
 int is_palindrome(char *s)
 {
-	int len = _strlen_recursion(s);
+	int len = _strlen_(s);
 
 	return (palin(s, len - 1));
 }
