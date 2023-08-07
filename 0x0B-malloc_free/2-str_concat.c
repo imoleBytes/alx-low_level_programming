@@ -20,7 +20,7 @@ int stringlen(char *str)
 }
 
 /**
-* str_concat - func to create a block of memmory and fill it with string
+* str_concat - func to concatenate 2 strings
 * @s1: pointer to str1
 * @s2: pointer to string2
 * Return: a pointer to array
