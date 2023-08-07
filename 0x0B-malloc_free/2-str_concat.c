@@ -3,6 +3,23 @@
 
 
 /**
+* stringlen - lenght of string
+* @str: string
+* Return: int
+*/
+int stringlen(char *str)
+{
+	unsigned int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+/**
 * str_concat - func to create a block of memmory and fill it with string
 * @s1: pointer to str1
 * @s2: pointer to string2
@@ -11,38 +28,32 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *array;
-	int i;
-	int count;
-	int count1 = 0;
-	int count2 = 0;
+	unsigned int i, j, len;
 
-	/*
-	* if (str == NULL)
-	*	return (NULL);
-	*/
-	while (s1[count1] != '\0')
+	/*If the array is empty*/
+	if (s1 == NULL)
+		s1 = "";
+
+	if (s2 == NULL)
+		s2 = "";
+
+	len = (stringlen(s1) + stringlen(s2) + 1);
+
+	array = (char *) malloc(len * sizeof(char));
+
+	if (array == 0)
 	{
-		count1++;
+		return (NULL);
 	}
-	while (s2[count2] != '\0')
+
+	for (i = 0; *(s1 + i) != '\0'; i++)
+		*(array + i) = *(s1 + i);
+
+	for (j = 0; *(s2 + j) != '\0'; j++)
 	{
-		count2++;
+		*(array + i) = *(s2 + j);
+		i++;
 	}
-	count = count1 + count2 + 1;
-	array = malloc(sizeof(*s1) * count);
-	if (array != NULL)
-	{
-		for (i = 0; i <= count1; i++)
-		{
-			array[i] = s1[i];
-		}
-		i = 0;
-		for (i = 0; i <= count2; i++)
-		{
-			array[count1 + 1 + i] = s2[i];
-		}
-		array[count] = '\0';
-		return (array);
-	}
-	return (NULL);
+
+	return (array);
 }
