@@ -13,9 +13,14 @@ char *_strdup(char *str)
 
 	char *array;
 	int i = 0;
+	int count = 0;
 
-
-	array = malloc(sizeof(*str));
+	while (str[count] != '\0')
+	{
+		count++;
+	}
+	
+	array = malloc(sizeof(*str) * count);
 
 	if (array != NULL)
 	{
