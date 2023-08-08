@@ -1,37 +1,47 @@
 #include <stdlib.h>
 
+/**
+* stringlen - calculates lenght of string
+* @str: the string
+* Return: int
+*/
 int stringlen(char *str)
 {
 	unsigned int i = 0;
 
-	while (*(str+i) != '\0'){
+	while (*(str + i) != '\0')
+	{
 		i++;
 	}
 	return (i);
 }
 
-
+/**
+* argstostr - This function stringify all the arguments passed to a program
+* @ac: argument count (int)
+* @av: pointer to list of strings (pointer to pointers)
+* Return: dest (pointer to string)
+*/
 char *argstostr(int ac, char **av)
 {
 	int i;
 	char *dest;
 	int lenghtOfDest;
-
-	// get the lenght of each of the arguments, first argument not inclusive
 	int sumOfLenght = 0;
+	int j;
+	int a = 0;
 
+	/* get the lenght of each of the arguments, first argument not inclusive*/
 	for (i = 1; i < ac; i++)
 	{
 		sumOfLenght += stringlen(av[i]);
 	}
-	lenghtOfDest = sumOfLenght + ac; // adding ac for \n on each argument + 1 '\0'
+	/* adding ac for \n on each argument + 1 '\0'*/
+	lenghtOfDest = sumOfLenght + ac;
 
 	dest = malloc(sizeof(char) * lenghtOfDest);
 
-	// fill dest with each argument
-	int j;
-	int a = 0;
-
+	/*fill dest with each argument*/
 	for (i = 1; i < ac; i++)
 	{
 		j = 0;
@@ -42,8 +52,7 @@ char *argstostr(int ac, char **av)
 			j++;
 		}
 		dest[a] = '\n';
-		a++;		
+		a++;
 	}
-
 	return (dest);
 }
