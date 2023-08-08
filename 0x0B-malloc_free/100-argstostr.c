@@ -47,7 +47,7 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 
 	/*fill dest with each argument*/
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		j = 0;
 		while (av[i][j] != '\0')
