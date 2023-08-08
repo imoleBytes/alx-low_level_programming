@@ -33,7 +33,7 @@ char *argstostr(int ac, char **av)
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	
+
 	/* get the lenght of each of the arguments, first argument not inclusive*/
 	for (i = 1; i < ac; i++)
 	{
@@ -42,7 +42,7 @@ char *argstostr(int ac, char **av)
 	/* adding ac for \n on each argument + 1 '\0'*/
 	lenghtOfDest = sumOfLenght + ac;
 
-	dest = malloc(sizeof(char) * lenghtOfDest);
+	dest = malloc(sizeof(char *) * lenghtOfDest);
 	if (dest == NULL)
 		return (NULL);
 
