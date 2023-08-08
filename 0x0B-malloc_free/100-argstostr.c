@@ -31,6 +31,9 @@ char *argstostr(int ac, char **av)
 	int j;
 	int a = 0;
 
+	if (ac == 0 || av == NULL)
+		return (NULL);
+	
 	/* get the lenght of each of the arguments, first argument not inclusive*/
 	for (i = 1; i < ac; i++)
 	{
@@ -40,6 +43,8 @@ char *argstostr(int ac, char **av)
 	lenghtOfDest = sumOfLenght + ac;
 
 	dest = malloc(sizeof(char) * lenghtOfDest);
+	if (dest == NULL)
+		return (NULL);
 
 	/*fill dest with each argument*/
 	for (i = 1; i < ac; i++)
