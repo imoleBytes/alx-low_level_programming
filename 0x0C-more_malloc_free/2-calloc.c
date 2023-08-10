@@ -1,39 +1,39 @@
-#include "main.h"
+#include <stdlib.h>
 
 /**
- * _memset - copy char
- * @s: string
- * @b: input
- * @n: bytes
- * Return: string
- */
+* _memset - this func copies char
+* @s: str
+* @b: char to copy
+* @n: no of bytes to fill
+* Return: s
+*/
 char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
+	unsigned int a;
 
-	for (i = 0; i < n; i++)
+	for (a = 0; a < n; a++)
 	{
-		s[i] = b;
+		s[a] = b;
 	}
 	return (s);
 }
 
 /**
- * _calloc - allocates memory for an array using malloc
- * @nmemb: n elements
- * @size: bytes
- * Return: pointer
- */
+* _calloc - this allocates memory for an array.
+* @nmemb: number of elements
+* @size: no of bytes
+* Return: pointer
+*/
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *p;
+	void *ptr;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
-	p = malloc(nmemb * size);
+	ptr = malloc(nmemb * size);
 
-	if (p == NULL)
+	if (ptr == NULL)
 		return (NULL);
-	_memset(p, 0, (nmemb * size));
-	return (p);
+	_memset(ptr, 0, (nmemb * size));
+	return (ptr);
 }
