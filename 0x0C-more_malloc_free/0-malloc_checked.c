@@ -2,6 +2,7 @@
 /**
 *malloc_checked - this func return array of str
 *@b: int (memory)
+* Return: void ptr
 */
 
 void *malloc_checked(unsigned int b)

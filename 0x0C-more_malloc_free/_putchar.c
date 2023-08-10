@@ -3,10 +3,10 @@
 /**
 * _putchar - writes the character c to stdout
 * @c: char
-* Return: 1
+* Return: 0
 */
 int _putchar(char c)
 {
-  write(1, &c, 1);
-  return (0);
+	write(1, &c, 1);
+	return (0);
 }
