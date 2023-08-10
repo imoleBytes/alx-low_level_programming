@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdlib.h>
 /**
 *malloc_checked - this func return array of str
 *@b: int (memory)
