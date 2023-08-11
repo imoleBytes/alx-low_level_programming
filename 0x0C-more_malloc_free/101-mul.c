@@ -1,27 +1,24 @@
-#include "main.h"
 #include <stdlib.h>
 
 /**
- * _atoi_digit - convert a char to integer.
- * @x: character to convert.
- * kkkdjdjjdd
- * Return: integer.
- **/
-
-int _atoi_digit(char x)
+* _atoi_digit - functio to convert char to int.
+* @c: char
+* Return: integer.
+*/
+int _atoi_digit(char c)
 {
-	unsigned int res;
+	unsigned int re;
 
-	if (x <= '9' && x >= '0')
-		res = x - '0';
-	return (res);
+	if (c <= '9' && c >= '0')
+		re = c - '0';
+	return (re);
 }
 
 /**
- * _isNumber - Define if a string is a number.
- * @argv: Pointer to string.
- * Return: success (0).
- **/
+* _isNumber - check if a string is a num.
+* @argv: Pointer
+* Return: 0
+*/
 int _isNumber(char *argv)
 {
 	int i;
@@ -33,37 +30,37 @@ int _isNumber(char *argv)
 }
 
 /**
- *_calloc - allocate array of size * nmemb.
- * @nmemb: number of elements.
- * @size: size of element.
- * Return: pointer to array.
- **/
+*_calloc - allocate array
+* @nmemb: number of elements.
+* @size: size of element.
+* Return: pointer
+**/
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *tab;
+	char *t;
 	unsigned int i;
 
-	tab = malloc(size * nmemb);
+	t = malloc(size * nmemb);
 
-	if (tab == NULL)
+	if (t == NULL)
 		return (NULL);
 
 	for (i = 0; i < (size * nmemb); i++)
-		tab[i] = '0';
+		t[i] = '0';
 
-	return (tab);
+	return (t);
 }
 
 /**
- * mul_array - multiply two arrays.
- * @a1: first array.
- * @len1: length of array a1.
- * @a2:  char.
- * @a3: array for result.
- * @lena: length of array a3.
- * Return: pointer to array.
- **/
+* mul_array - multiply
+* @a1: arr.
+* @len1: int.
+* @a2:  char.
+* @a3: array.
+* @lena: int
+* Return: pointer
+*/
 
 void *mul_array(char *a1, int len1, char a2, char *a3, int lena)
 {
@@ -89,10 +86,10 @@ void *mul_array(char *a1, int len1, char a2, char *a3, int lena)
 	return (a3);
 }
 /**
- * print_array - print all digits of array.
- * @nb: number of elements to print.
- * @a: array of elements.
- **/
+* print_array - print all digits
+* @nb: number of elements
+* @a: array
+*/
 void print_array(char *a, int nb)
 {
 	int i = 0;
@@ -109,11 +106,11 @@ void print_array(char *a, int nb)
 }
 
 /**
- *main - print the multiplication of 2 numbers.
- *@argc: array length.
- *@argv: array.
- *Return: 0.
- */
+* main - print the multiplication
+* @argc: array
+* @argv: array.
+* Return: 0.
+*/
 
 int main(int argc, char *argv[])
 {
