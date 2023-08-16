@@ -10,7 +10,7 @@
  */
 int main(int ac, char *av[])
 {
-	int num_bytes
+	int num_bytes;
 	int i;
 	char *array;
 
@@ -32,7 +32,7 @@ int main(int ac, char *av[])
 
 	for (i = 0; i < num_bytes; i++)
 	{
-		if (i == bytes - 1)
+		if (i == num_bytes - 1)
 		{
 			printf("%02hhx\n", array[i]);
 			break;
