@@ -4,6 +4,7 @@
 * @array: array of int
 * @size: int size of arr
 * @cmp: func pointer
+* Return: int
 */
 
 int int_index(int *array, int size, int (*cmp)(int))

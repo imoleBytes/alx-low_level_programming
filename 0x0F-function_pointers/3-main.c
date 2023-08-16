@@ -3,7 +3,12 @@
 #include <stdlib.h>
 
 
-
+/**
+* main - func start here
+* @argc: arg count
+* @argv: arra of args
+* Return: 0
+*/
 int main (int argc, char *argv[])
 {
 	int num1, num2, res;
