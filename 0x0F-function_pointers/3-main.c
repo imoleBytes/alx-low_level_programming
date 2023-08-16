@@ -12,6 +12,7 @@
 int main (int argc, char *argv[])
 {
 	int num1, num2, res;
+	char op;
 	int (*func)(int, int);
 
 	if (argc != 4)
@@ -21,6 +22,14 @@ int main (int argc, char *argv[])
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
+
+	op = *argv[2];
+
+	if ((op == '/' || op == '%') && num2 == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 
 	func = get_op_func(argv[2]);
 
