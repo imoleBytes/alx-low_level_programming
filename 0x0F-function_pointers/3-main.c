@@ -33,6 +33,13 @@ int main(int argc, char *argv[])
 
 	func = get_op_func(argv[2]);
 
+	if (!func)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+
 	res = func(num1, num2);
 	printf("%d\n", res);
 
