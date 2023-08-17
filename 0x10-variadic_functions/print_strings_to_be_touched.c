@@ -1,5 +1,6 @@
-#include <stdarg.h>
 #include <stdio.h>
+#include <stdarg.h>
+#include <string.h>
 
 /**
 * print_strings - func to print all args
@@ -8,26 +9,28 @@
 */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	va_list strings_;
+	va_list strrs;
 	unsigned int i;
 	char *temp;
 
-	va_start(strings_, n);
+	va_start(strrs, n);
 
 	for (i = 0; i < n; i++)
 	{
-		temp = va_arg(strings_, char *);
-
+		strrs = va_arg(strrs, char *);
 		if (temp)
+		{
 			printf("%s", temp);
+		}
 		else
+		{
 			printf("(nil)");
+		}
 
-		if (i < n - 1)
-			if (separator)
-				printf("%s", separator);
-	}
-
+		if (separator && i < (n - 1))
+			printf("%s", separator);
+	};
 	printf("\n");
-	va_end(strings_);
+
+	va_end(strrs);
 }
