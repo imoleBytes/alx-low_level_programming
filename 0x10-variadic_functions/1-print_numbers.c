@@ -4,6 +4,7 @@
 /**
 * print_numbers - func to print all args
 * @separator: const char pointer
+* @n: int
 */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
