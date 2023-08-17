@@ -8,9 +8,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list arguments;
-	unsigned int i = 0;
-	unsigned int j;
-	unsigned int k = 0;
+	unsigned int i = 0, j, k = 0;
 	char *_strings;
 	const char argTypes[] = "cifs";
 
