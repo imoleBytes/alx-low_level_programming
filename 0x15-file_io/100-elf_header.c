@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <stdio.h>
 /*
 * File: 100-elf_header.c
 */
@@ -257,6 +257,9 @@ void close_elf(int elf)
 * @argc: arguments count.
 * @argv: the arguments.
 * Return: 0 on success.
+
+* Description: If the file is not an ELF File or
+*              the function fails - exit code 98.
 */
 
 int main(int __attribute__((__unused__)) argc, char *argv[])
