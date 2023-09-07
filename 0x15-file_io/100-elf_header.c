@@ -257,7 +257,6 @@ void close_elf(int elf)
 * @argc: arguments count.
 * @argv: the arguments.
 * Return: 0 on success.
-
 * Description: If the file is not an ELF File or
 *              the function fails - exit code 98.
 */
