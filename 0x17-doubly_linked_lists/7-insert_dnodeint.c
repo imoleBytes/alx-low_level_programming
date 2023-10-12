@@ -2,6 +2,27 @@
 #include <stdlib.h>
 
 
+
+/**
+* dlistint_len - func to find the number of nodes in a double linked list
+* @h: pointer to head of node
+*
+* Return: number of nodes in the list
+*/
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t count = 0;
+
+	while (h != NULL) /* or while (h) */
+	{
+		count++;
+		h = h->next;
+	}
+	return (count);
+}
+
+
+
 /**
  * insert_dnodeint_at_index - func to insert a new node at a specific
  * index of a double linked list
@@ -25,13 +46,19 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	while (head->prev != NULL)
 		head = head->prev;
 
+	if (idx == 0)
+	{
+		new = add_dnodeint(h, n);
+		return (new);
+	}
+	if (idx == dlistint_len(*h))
+	{
+		new = add_dnodeint_end(h, n);
+		return (new);
+	}
+
 	while (head != NULL)
 	{
-		if (idx == 0)
-		{
-			new = add_dnodeint(h, n);
-			return (new);
-		}
 		if (i == idx)
 		{
 			new->n = n;
