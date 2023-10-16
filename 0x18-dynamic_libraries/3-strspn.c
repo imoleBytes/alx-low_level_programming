@@ -29,7 +29,7 @@ unsigned int _strspn(char *s, char *accept)
 			}
 
 			j++;
-			
+
 		}
 		if (s[in] != accept[j])
 		{
