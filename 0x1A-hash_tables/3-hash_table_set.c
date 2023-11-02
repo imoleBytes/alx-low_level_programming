@@ -19,12 +19,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *head;
 
 	new_node = malloc(sizeof(hash_node_t));
+	if (new_node == NULL)
+	{
+		return (0);
+	}
 
 	new_node->key = (char *)key;
 	/*strcpy(new_node->key, key);*/
 	new_node->value = (char *)value;
 	/*strcpy(new_node->value, value);*/
-	new_node->next = NULL;
+
 
 	/* find the index of the key of the node */
 	index = key_index((const unsigned char *)key, ht->size);
@@ -34,24 +38,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (head == NULL)
 	{
 		ht->array[index] = new_node;
+		new_node->next = NULL;
 		return (1);
 	}
 	else
 	{
-		/* not doing this since we are ading athe beginning of list
-		while (1)
-		{
-			if (head->next == NULL)
-			{
-				head->next = new_node;
-				return (1);
-			}
-			else
-			{
-				head = head->next;
-			}
-		}
-		*/
 		ht->array[index] = new_node;
 		new_node->next = head;
 		return (1);
