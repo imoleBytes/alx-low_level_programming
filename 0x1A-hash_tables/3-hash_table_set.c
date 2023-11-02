@@ -38,6 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
+		/* not doing this since we are ading athe beginning of list
 		while (1)
 		{
 			if (head->next == NULL)
@@ -50,6 +51,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				head = head->next;
 			}
 		}
+		*/
+		ht->array[index] = new_node;
+		new_node->next = head;
+		return (1);
 	}
 	return (0);
 }
