@@ -18,14 +18,14 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	if (arr == NULL)
 	{
-		return (NULL);
+		return ((hash_table_t)NULL);
 	}
 
 	newHt = (hash_table_t *)malloc(sizeof(hash_table_t));
 
 	if (newHt == NULL)
 	{
-		return (NULL);
+		return ((hash_table_t)NULL);
 	}
 
 	newHt->size = size;
