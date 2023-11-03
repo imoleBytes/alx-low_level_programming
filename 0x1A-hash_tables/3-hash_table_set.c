@@ -22,6 +22,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
+	/*check if the key already exist and replace the value*/
+	/*index = key_index((const unsigned char *)key, ht->size);*/
+
+	/* ht->array[index]*/
+
+
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 	{
@@ -47,6 +53,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
+		while (head)
+		{
+			if (strcmp(head->key, key) == 0)
+			{
+				free(head->value);
+				head->value = value;
+				return (1);
+			}
+			head = head->next;
+		}
 		ht->array[index] = new_node;
 		new_node->next = head;
 		return (1);
