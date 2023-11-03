@@ -32,6 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node->value = (char *)value;
 	/*strcpy(new_node->value, value);*/
 
+
 	/* find the index of the key of the node */
 	index = key_index((const unsigned char *)key, ht->size);
 
@@ -41,15 +42,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		head = new_node;
 		/*ht->array[index] = new_node;*/
-		head->next = NULL;
-		/*new_node->next = NULL;*/
+		new_node->next = NULL;
 		return (1);
 	}
 	else
 	{
-		new_node->next = head;
 		ht->array[index] = new_node;
-		
+		new_node->next = head;
 		return (1);
 	}
 	return (0);
