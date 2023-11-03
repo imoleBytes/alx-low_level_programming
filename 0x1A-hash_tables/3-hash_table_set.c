@@ -11,66 +11,46 @@
 *
 * Return: 1 if it succeeded, 0 otherwise.
 */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	/** create a node */
-	hash_node_t *new_node;
-	unsigned long int index;
-	hash_node_t *head;
-	hash_node_t *pt;
+	hash_node_t *new;
+	char *value_copy;
+	unsigned long int index, i;
 
-	/*if (key == NULL || strlen(key) == 0)*/
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
-	/*check if the key already exist and replace the value*/
-	/*index = key_index((const unsigned char *)key, ht->size);*/
+	value_copy = strdup(value);
+	if (value_copy == NULL)
+		return (0);
 
-	/* ht->array[index]*/
-
-
-	new_node = malloc(sizeof(hash_node_t));
-	if (new_node == NULL)
+	index = key_index((const unsigned char *)key, ht->size);
+	for (i = index; ht->array[i]; i++)
 	{
+		if (strcmp(ht->array[i]->key, key) == 0)
+		{
+			free(ht->array[i]->value);
+			ht->array[i]->value = value_copy;
+			return (1);
+		}
+	}
+
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
+	{
+		free(value_copy);
 		return (0);
 	}
-
-	new_node->key = (char *)key;
-	/*strcpy(new_node->key, key);*/
-	new_node->value = (char *)value;
-	/*strcpy(new_node->value, value);*/
-
-
-	/* find the index of the key of the node */
-	index = key_index((const unsigned char *)key, ht->size);
-
-	/** insert the node at the index of the array in the hashtable */
-	head = ht->array[index];
-	if (head == NULL)
+	new->key = strdup(key);
+	if (new->key == NULL)
 	{
-		ht->array[index] = new_node;
-		new_node->next = NULL;
-		return (1);
+		free(new);
+		return (0);
 	}
-	else
-	{
-		pt = head;
-		while (pt)
-		{
-			if (strcmp(pt->key, key) == 0)
-			{
-				free(pt->value);
-				pt->value = (char *)value;
-				return (1);
-			}
-			pt = pt->next;
-		}
+	new->value = value_copy;
+	new->next = ht->array[index];
+	ht->array[index] = new;
 
-		ht->array[index] = new_node;
-		new_node->next = head;
-		return (1);
-
-
-	}
-	return (0);
+	return (1);
 }
