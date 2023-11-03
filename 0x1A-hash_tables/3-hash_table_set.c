@@ -40,8 +40,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	head = ht->array[index];
 	if (head == NULL)
 	{
-		head = new_node;
-		/*ht->array[index] = new_node;*/
+		ht->array[index] = new_node;
 		new_node->next = NULL;
 		return (1);
 	}
