@@ -3,33 +3,17 @@
 #include <stdio.h>
 
 
-void print_linked_l(hash_node_t *head, int *prev);
-
-
-
-void hash_table_print(const hash_table_t *ht)
-{
-	int i = 0;
-	int prev = 0;
-
-	printf("{");
-	while (i < (int)ht->size)
-	{
-		
-		print_linked_l(ht->array[i], &prev);
-		/*if ()
-		{
-			printf(", ");
-		}
-		*/
-		i++;
-	}
-	printf("}\n");
-}
+/**
+* print_linked_l - This function prints the individual linked list.
+*
+* @head: pointer to the head of node.
+* @prev: pointer to if there was a previous printed vaalue
+*
+*/
 
 void print_linked_l(hash_node_t *head, int *prev)
 {
-	while(head)
+	while (head)
 	{
 		if (*prev == 1)
 			printf(", ");
@@ -39,4 +23,24 @@ void print_linked_l(hash_node_t *head, int *prev)
 			/*printf(", ");*/
 		head = head->next;
 	}
+}
+
+
+
+/**
+* hash_table_print - This function prints a hashtable
+* @ht: pointer to the hashtable.
+*/
+void hash_table_print(const hash_table_t *ht)
+{
+	int i = 0;
+	int prev = 0;
+
+	printf("{");
+	while (i < (int)ht->size)
+	{
+		print_linked_l(ht->array[i], &prev);
+		i++;
+	}
+	printf("}\n");
 }
