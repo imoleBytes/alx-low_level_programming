@@ -1,7 +1,6 @@
 #include "search_algos.h"
 #include <stdio.h>
 
-void print_array(int *arr, int a, int z);
 /**
 * binary_search - binary search algorithm, to find a value in an array
 * @array: array of integers
