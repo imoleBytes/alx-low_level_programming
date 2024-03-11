@@ -1,5 +1,8 @@
 #### 0x1E-search_algorithms
 
+#header file
+search_algos.h (should be included)
+
 This projects contains Search algorithms
 Basically, search algrorithms are divided into 3
 
